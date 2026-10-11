@@ -2,6 +2,10 @@
 
 A tiny, interactive field guide to the eight planets. Choose a planet from the orbit view or the index, pause the orbital motion, and browse a few compact facts about each world.
 
+## Live demo
+
+[Open Pocket Orbit](https://pocket-orbit-one.vercel.app)
+
 ## Run it
 
 Open `index.html` directly, or serve the folder locally:
