@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#090e1a" />
+    <meta name="description" content="A tiny interactive planetarium for exploring the planets in our solar system." />
+    <title>Pocket Orbit — a tiny solar system atlas</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="sky-grain" aria-hidden="true"></div>
+    <main class="shell">
+      <header class="masthead">
+        <a class="brand" href="#top" aria-label="Pocket Orbit home">
+          <span class="brand-mark" aria-hidden="true"><span></span></span>
+          <span>POCKET <b>ORBIT</b></span>
+        </a>
+        <div class="masthead-note"><span class="live-dot"></span> A SMALL FIELD GUIDE TO OUR SOLAR SYSTEM</div>
+        <a class="source-link" href="https://science.nasa.gov/solar-system/planets/planet-sizes-and-locations-in-our-solar-system/" target="_blank" rel="noreferrer">FIELD NOTES <span aria-hidden="true">↗</span></a>
+      </header>
+
+      <section class="intro" id="top" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">THE NEIGHBOURHOOD OUT THERE <span>— 01 / 08</span></p>
+          <h1 id="page-title">A little closer<br /><em>to the planets.</em></h1>
+        </div>
+        <p class="intro-copy">Pick a world and take a short trip around the Sun. No telescope, launch window, or spacesuit required.</p>
+      </section>
+
+      <section class="explorer" aria-label="Interactive solar system explorer">
+        <div class="orbit-stage" id="orbit-stage" aria-label="Animated, not-to-scale model of the solar system">
+          <div class="stage-label stage-label--top"><span>THE SOLAR SYSTEM</span><span class="stage-rule"></span><span>NOT TO SCALE</span></div>
+          <div class="star-dust" aria-hidden="true"></div>
+          <div class="sun-halo" aria-hidden="true"></div>
+          <div class="sun" aria-label="The Sun"><span></span></div>
+          <div class="orbit-rings" id="orbit-rings" aria-label="Select a planet in orbit"></div>
+          <div class="stage-coordinate">SOL<br /><b>000° 00′</b></div>
+          <div class="stage-bottom"><span>FOLLOW THE LIGHT</span><span class="stage-bottom-line"></span><span id="stage-selection">EARTH / THIRD ORBIT</span></div>
+        </div>
+
+        <aside class="planet-card" aria-live="polite" aria-atomic="true">
+          <div class="card-topline"><span id="planet-index">03 / 08</span><span class="card-star" aria-hidden="true">✳</span><span id="planet-kind">TERRESTRIAL PLANET</span></div>
+          <div class="planet-art" id="planet-art" role="img" aria-label="Illustration of Earth"><div class="planet-shadow"></div><div class="planet-body"></div><div class="planet-ring"></div></div>
+          <p class="planet-kicker" id="planet-kicker">HOME, FOR NOW</p>
+          <h2 id="planet-name">Earth</h2>
+          <p class="planet-description" id="planet-description">The only world we know of with liquid oceans on the surface — and the only one with us.</p>
+          <div class="planet-stats">
+            <div><span>FROM THE SUN</span><strong id="planet-distance">1.00 <small>AU</small></strong></div>
+            <div><span>ONE YEAR</span><strong id="planet-year">365 <small>days</small></strong></div>
+          </div>
+          <div class="planet-fact"><span class="fact-mark" aria-hidden="true">✦</span><p id="planet-fact">Earth’s atmosphere scatters blue light, giving our sky its familiar colour.</p></div>
+          <div class="card-controls">
+            <button class="orbit-toggle" id="orbit-toggle" type="button" aria-pressed="false"><span class="pause-icon" aria-hidden="true">Ⅱ</span><span>Pause orbits</span></button>
+            <button class="surprise-button" id="surprise-button" type="button">Surprise me <span aria-hidden="true">↗</span></button>
+          </div>
+        </aside>
+      </section>
+
+      <nav class="planet-nav" aria-label="Choose a planet">
+        <div class="nav-heading"><span>CHOOSE YOUR WORLD</span><span>01 — 08</span></div>
+        <div class="planet-list" id="planet-list"></div>
+      </nav>
+
+      <footer class="page-footer">
+        <p>Made for the joy of looking up.</p>
+        <p>Planet distances and orbital periods are rounded from <a href="https://solarsystem.nasa.gov/planet-compare/" target="_blank" rel="noreferrer">NASA Solar System Exploration</a>. The picture is a little compressed; space is very big.</p>
+      </footer>
+    </main>
+  </body>
+</html>
